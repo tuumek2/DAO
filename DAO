@@ -16,6 +16,7 @@ contract Crowdfunding {
     receive() external payable {
         require(block.timestamp < deadline, "Zbiorka zakonczona");
         raised += msg.value;
+
     }
     function withdraw() public {
         require(msg.sender == owner, "Nie jestes wlascicielem");
