@@ -12,6 +12,7 @@ contract Crowdfunding {
         goal = _goal;
         deadline = block.timestamp + _duration;
     }
+
     receive() external payable {
         require(block.timestamp < deadline, "Zbiorka zakonczona");
         raised += msg.value;
